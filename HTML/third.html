@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css_intro</title>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <!-- internal css -->
+    <style>
+        h1,ol{
+            background-color: blue;
+            /* font-size: 8rem; */
+        }
+        /* class selector */
+        .pstyle{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: brown;
+            
+        }
+
+        /* id selector */
+        #para2{
+
+            color:indigo;
+            font-weight:bolder;
+        }
+        
+        /* attribute selector */
+        a[href]{
+            color: brown;
+        }
+
+        img[alt]{
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        #para2:{
+            font-size: .5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- inline -->
+    <h1 style="color:red;">hello darwin</h1>
+    <p class="pstyle" 
+style="color:yellow;font-size:50px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque distinctio culpa in velit, impedit a, corporis natus odit magnam fuga officiis ad repellat provident, nihil eligendi? Quidem quam ab architecto?</p>
+    <p id="para2" class="pstyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus quo, nemo cumque vitae natus, architecto ratione et quia facilis consectetur enim molestiae minus voluptate quam praesentium odit laudantium hic aperiam!</p>
+
+    <ol>
+        <li>monday</li>
+        <li>tuesday</li>
+        <li>wednesday</li>
+        <li>thursday</li>
+        <li>friday</li>
+        <li>saturday</li>
+        <li>sunday</li>
+    </ol>
+
+    <a href="#">link</a>
+    <img src="../Image/firstImage.png" alt="justImage">
+</body>
+</html>

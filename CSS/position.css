@@ -1,0 +1,46 @@
+div{
+    border: 2px solid red;
+    margin-top: 10px;
+
+}
+.container{
+    border: 2px solid green;
+    /* position: relative; */
+    height: 100vh;
+}
+body{
+    /* position: relative; */
+    height: 200vh;
+}
+/* 
+#third{
+    position:relative;
+    top: -20px;
+    left: 30px;
+    background-color: yellow;
+} */
+
+#second{
+    background-color: rgb(202, 126, 194);
+    /* position: absolute; */
+    top: 10px;
+    position: sticky;
+    /* bottom: 20px; */
+    /* z-index: 4; */
+    /* right:20px; */
+}
+
+#fourth{
+    position: relative;
+    z-index: 5000;
+    margin-bottom: 20px;
+    background-color: brown;
+}
+
+#first{
+    background-color: rgb(124, 141, 93);
+    /* position: fixed;
+    top: 5px; */
+    /* bottom: 10px; */
+}
+

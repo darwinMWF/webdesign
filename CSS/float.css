@@ -1,0 +1,70 @@
+img{
+    float: left;
+}
+
+#second{
+    float: right;
+}
+
+#THIRD{
+        float: right;
+}
+
+#floatclear{
+    clear:right;
+}
+
+#big{
+    clear: left;
+}
+.container{
+    width:fit-content;
+    border: 2px solid red;
+    height:20rem;
+
+}
+.container div{
+    height: 100px;
+    width: 100px;
+    border: 2px solid black;
+    float:right;
+}
+
+.box-3{
+    clear: right;
+}
+
+.division{
+    width:200px;
+    height: 200px;
+    border: 2px solid red;
+    margin: 10px auto;
+    overflow:auto;
+}
+
+.fix{
+    border: 2px solid green;
+    overflow:auto;
+}
+
+#fourth{
+    float: right;
+    width: 100px;
+}
+
+.bgbr{
+    width: 20rem;
+    height:10rem;
+    border: 2px solid red;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyzhBJVplid-DcEtJSw_8MfTrkO3Cd0cxHMImg3290bQ&s),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyzhBJVplid-DcEtJSw_8MfTrkO3Cd0cxHMImg3290bQ&s);
+    background-size:contain,contain;
+  background-repeat: no-repeat, repeat;
+  background-position: left top, right top;
+    
+}
+h2{
+    
+    
+    text-align: center;
+    
+}

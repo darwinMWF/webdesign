@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #3598dc;
+}
+
+.container{
+    /* border: 2px solid red; */
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #ffffff;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60vh;
+    padding: 20px;
+   
+}
+
+.main-container{
+    height: 100vh;
+    /* border: 2px solid red; */
+    
+}
+
+header p{
+    font-size: .8rem;
+    color: #a4abab;
+    padding-top: 5px;
+
+}
+
+#firstName{
+    margin-right: 13px;
+}
+
+form p input{
+    background-color: #f2f2f2;
+    border: #ffffff;
+    padding:10px;
+    margin-top:15px;
+    height: 50px;
+    border-radius: 3px;
+}
+
+footer p input{
+    accent-color: #f2f2f2;
+}
+#footerlabel{
+    font-size: 0.8rem;
+}
+
+#footerlabel a{
+    text-decoration: none;
+}
+
+footer{
+    padding: 10px;
+}
+
+::placeholder{
+    color: #a4abab;
+    font-size: 1rem;
+    /* margin:2px 1px ; */
+}
+
+#email,#password,#confirm-password{
+    width: 100%;
+}
+
+#submitBtn{
+    margin-top: 15px;
+}
+
+input[type="submit"]{
+
+    width: 120px;
+    background-color: #3598dc;
+    color: #ffffff;
+    padding: 8px;
+    border: #ffffff;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.lastFooter{
+    position: relative;
+    text-align: center;
+    top:15%;
+}
+
+.lastFooter p,.lastFooter p a{
+    color: #ffffff;
+}

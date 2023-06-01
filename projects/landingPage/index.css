@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+Chorasmian&family=Nunito+Sans:wght@300&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&family=Noto+Sans+Chorasmian&family=Nunito+Sans:wght@300&family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Nunito Sans', sans-serif;
+    list-style: none;
+    text-transform: capitalize;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: hsl(225deg 19.51% 16.08%) ;
+
+}
+
+/* header section  */
+
+header{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     height: 50px;
+     /* border: 2px solid red; */
+     background-color: white;
+     padding:0 20px;
+    
+}
+
+.nav ul{
+    display: flex;
+    color: black;
+    
+}
+
+.logo{
+    font-size: 20px;
+}
+
+.logo i{
+    padding-right: 10px;
+}
+.logo a{
+    font-weight:bold;
+}
+.nav ul li a{
+    color: black;
+    font-size: 15px;
+    
+}
+
+.nav ul li {
+    margin: 0 1rem;
+    color: black;
+    font-weight: 500;
+}
+
+.nav ul li:hover{
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+/* header section end  */
+
+
+/* hero section */
+
+.hero{
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    padding: 5rem 10rem;
+}
+.tagline{
+    flex: 1 1 40rem;
+}
+
+.images{
+    flex: 1 1 25rem;
+
+}
+
+.tagline h2{
+    font-size: 6.5rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Lilita One', cursive;
+}
+
+.yellow{
+    color: yellow;
+}
+
+.tagline h3{
+    font-size: 6rem;
+    font-weight:bold;
+    color: white
+    ;
+}
+
+.tagline p{
+    color: white;
+}
+
+.orderBtn{
+    height:2.5rem;
+    width:12rem;
+    border: 2px solid white;
+    margin-top: 10px;
+    padding: 0 18px 0;
+}
+
+.orderBtn a{
+    font-size: medium;
+    color:white;
+}
+
+.orderBtn:hover{
+    background-color: white;
+    
+
+}
+
+.orderBtn a:hover{
+    color: black;
+}
+
+.images img{
+    width: 90%;
+    height: 90%;
+}
+
+
+

@@ -1,0 +1,71 @@
+/* @media (400px>= width <=500px){
+
+    body{
+        background-color: brown;
+    }
+} */
+
+
+
+
+/* media width max width */
+
+/* @media screen and (max-width:900px){
+    body{
+        background-color: chocolate;
+    }
+
+}
+
+@media screen and (max-width:600px){
+    body{
+        background-color: blue;
+    }
+}
+
+@media screen and (max-width:300px){
+    body{
+        background-color: rgb(120, 120, 186);
+    }
+} */
+
+
+
+/* @media screen and (min-width:768px) and (max-width:900px){
+    h1{
+        font-size: 1rem;
+        background-color: brown;
+    }
+} */
+
+
+/* 
+@media screen and (min-width:300px){
+    body{
+        background-color:blueviolet;
+    }
+}
+
+@media screen and (min-width:600px){
+    body{
+        background-image: url('../images/signup\ form.png');
+    }
+} */
+
+@media screen and (max-width:768px) {
+    .container{
+        gap: 10px;
+        overflow: auto;
+    }
+    .child{
+        flex: 100%;
+        margin: 0 25px;
+    }
+
+    .container .formg{
+        margin-top: 10px;
+
+    }
+}
+
+

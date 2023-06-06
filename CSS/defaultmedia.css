@@ -1,0 +1,26 @@
+body{
+    /* background-color: darkgoldenrod; */
+
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    border: 2px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 10px; */
+}
+
+.child{
+    flex: 25%;
+    height: 25%;
+    border: 4px solid  rgb(12, 14, 12);
+    font-size: 2rem;
+}

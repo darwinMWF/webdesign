@@ -1,0 +1,72 @@
+
+a{
+    font-size: 2rem;
+}
+a:link{
+    color: red;
+    /* text-decoration: none; */
+}
+
+a:visited{
+    color: orange;
+}
+
+a:hover{
+    color: blue;
+
+}
+
+a:active{
+    color:green;
+}
+
+p:first-child{
+    color: blueviolet;
+}
+
+
+input:checked{
+    outline:none;
+    border:2px solid red;
+    background-color: chartreuse; 
+}
+
+.check{
+
+    background-color: blueviolet;
+    width: fit-content;
+}
+
+
+
+
+
+input[type="button"]:disabled{
+    height: 100px;
+    width: 100px;
+}
+
+input[type="text"]:focus{
+    background-color: brown;
+}
+
+h1::after{
+    content: "my name is mukesh";
+}
+
+h1::before{
+    /* content:url("../images/pngwing.com\ \(3\).png"); */
+    /* content: ""; */
+    background-image: url('../images/pngwing.com\ \(3\).png');
+    background-size: 50px 20px;
+    display: inline-block;
+    width: 50px; 
+    height:50px;
+    content:"";
+
+
+}.firstdv div:nth-child(3n-1){
+   background-color: blue;
+}
+
+

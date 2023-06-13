@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform,transitions</title>
+    <style>
+     h1{
+        color: red;
+        text-align: center;
+        
+     }
+
+     h1:hover{
+        /* transform: scale(2,3); */
+        /* transform: rotate(0.5turn); */
+        /* transform: rotate3d(1, 2, 3, 10deg); */
+        /* transform: translate3d(4rem,20%,10px); */
+    }
+
+     .container{
+        height: 5rem;
+        width: 8rem;
+        /* margin: 0 auto; */
+        border: 2px solid red;
+        /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        animation-name: bckColor;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 5;
+        animation-direction: normal;
+        animation-fill-mode:both;
+
+     }
+
+     .container:hover{
+        /* transform: scale3d(2,1.5,3); */
+        /* transform: rotate(45deg); */
+        /* transform: rotateZ(30deg); */
+        /* transform: translate(4rem,25%); */
+        /* transform: translateX(4rem);
+        transform: translateY(3rem); */
+        /* transform: skew(25deg); */
+        /* transform: skewX(-23deg); */
+        /* width: 300px; */
+        /* height: 400px; */
+        /* transition:width 2s,height 4s; */
+        /* transition: width 1s ease-in-out; */
+        /* transform: translate(4rem,50%);
+        transition-property: transform ;
+        transition-duration: 3s;
+        transition-timing-function: cubic-bezier(0,.87,.78,.89);
+        transition-delay: 1s; */
+    }
+     .main{
+        height: 10rem;
+        width: 20rem;
+        border: 4px solid green;
+        margin: 0 auto;
+     }
+
+     @keyframes bckColor {
+        /* from{
+            background-color: brown;
+        }
+
+        to{
+            background-color: chocolate;
+        } */
+
+        0%{
+            background-color: chocolate;
+            border: 2px solid blue;
+            transform: translate(0,0);
+        }
+
+        25%{
+            background-color: crimson;
+            /* width: 400px; */
+            border: 2px solid rgb(147, 104, 145);
+            transform:translate(12rem,0) ;
+        }
+
+        50%{
+            background-color: rgb(67, 160, 128);
+            border: 2px solid rgb(134, 134, 58);
+            transform: translate(12rem,5rem);
+        }
+
+        75%{
+            background-color: cornflowerblue;
+            border: 2px solid yellow;
+            transform: translate(0,5rem);
+        }
+
+        100%{
+            background-color: chocolate;
+            border: 2px solid blue;
+            transform: translate(0,0);
+        }
+     }
+
+    </style>
+</head>
+<body>
+    <h1>Transform</h1>
+    <div class="main">
+        <div class="container"></div>
+    </div>
+</body>
+</html>

@@ -16,7 +16,8 @@ html{
 }
 
 body{
-    background-color: hsl(225deg 19.51% 16.08%) ;
+    /*  */
+    /* background-color: hsl(225deg 19.51% 16.08%) ; */
 
 }
 
@@ -24,6 +25,7 @@ body{
 
 header{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    
 }
 
 .nav{
@@ -80,6 +82,7 @@ header{
     min-height: 100vh;
     align-items: center;
     padding: 5rem 10rem;
+    background-color: hsl(225deg 19.51% 16.08%) ;
 }
 .tagline{
     flex: 1 1 40rem;
@@ -139,6 +142,106 @@ header{
     width: 90%;
     height: 90%;
 }
+
+.align{
+    width: 1024px;
+    border: 2px solid red;
+    margin: 0 auto;
+}
+
+.gotfood{
+ background-color: hsl(40deg 42.86% 95.88%);
+ border:  2px solid orange
+};
+
+   
+  
+
+#foodItems{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    border: 2px solid green;
+
+}
+
+.foodItems div{
+    width: 30%;
+    height:45rem;
+    border: 2px solid red;
+}
+
+.foodItems div img{
+    width: 100%;
+    display: block;
+}
+
+.fhead{
+    font-weight: 500;
+    text-align: center;
+    color: red;
+    font-size: 2rem;
+
+}
+
+.rating i{
+    color: yellow;
+}
+
+.fhead + h2{
+    font-size: 3.2rem;
+    font-weight: 600;
+    text-align:  center;
+    margin-top: 1rem;
+}
+
+
+.fhead + h2 + p {
+    color:#f42f25;
+    text-align: center;
+    font-size:1.5rem ;
+    margin-top: 1rem;
+}
+
+
+.fhead + h2 + p + div{
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+   margin-top: 1rem;
+}
+
+.fhead + h2 + p + div button{
+    background-color: white;
+    font-weight:800;
+    font-size:large;
+    padding:.7rem;
+    border:2px solid hsl(40deg 42.86% 95.88%);
+    
+} 
+
+.fhead + h2 + p + div button:nth-child(1){
+    background-color: orange;
+    color: white;
+}
+
+
+.aboutfood{
+    margin: 20px 0;
+}
+
+
+
+
+#foods{
+    color: hsl(32, 100%, 59%);
+}
+
+
+
+
+
 
 
 

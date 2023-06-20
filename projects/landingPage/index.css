@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+Chorasmian&family=Nunito+Sans:wght@300&family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&family=Noto+Sans+Chorasmian&family=Nunito+Sans:wght@300&family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Lobster&family=Noto+Sans+Chorasmian&family=Nunito+Sans:wght@300&family=Roboto&family=Rubik&display=swap');
+:root{
+    --varfor-fontFamily:'Rubik', sans-serif;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: var(--varfor-fontFamily);
+
     list-style: none;
     text-transform: capitalize;
 }
@@ -149,32 +153,45 @@ header{
     margin: 0 auto;
 }
 
-.gotfood{
+.hero + section{
  background-color: hsl(40deg 42.86% 95.88%);
  border:  2px solid orange
 };
 
    
-  
+ /* menu data  */
 
-#foodItems{
+.foodItems{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 
+}
+
+.anotherfood{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    
+    /* border: 2px solid green; */
 }
 
 .foodItems div{
     width: 30%;
     height:45rem;
-    border: 2px solid red;
+    box-shadow:  0 1px 2px hsla(0, 0%, 0%, 0.2);
+    background-color: white;
+    padding: 40px;
+    /* border: 2px solid red; */
 }
 
 .foodItems div img{
     width: 100%;
     display: block;
+    margin-bottom: 2rem;
 }
 
 .fhead{
@@ -237,6 +254,84 @@ header{
 #foods{
     color: hsl(32, 100%, 59%);
 }
+
+.foodName{
+    font-size: 1.5rem;
+    font-weight: 650;
+    display: inline-block;
+    color: hsl(0deg 0% 47.06%);
+
+}
+
+.rating {
+    display: inline-block;
+    margin-left: 5rem;
+}
+.rating i{
+    font-size:1.5rem ;
+  
+}
+
+.adtitle{
+    font-weight: 900;
+    font-size: 2rem;
+    margin: 16px 0 10px 0;
+}
+
+.adtitle + p{
+    color: #f42f25;
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.adtitle + p span{
+    color: orange;
+}
+
+del{
+    text-decoration: line-through;
+    color: silver;
+}
+
+.foodguide{
+    margin:20px;
+}
+
+
+.reviews{
+    display: flex;
+    gap: 10px;
+    width: 100%;
+
+}
+
+.sizereview{
+    width: 33%;
+    padding: 40px;
+    border: 2px solid red;
+   
+}
+
+.imgProfile{
+    display: flex;
+    border: 2px solid yellow;
+    width: 100%;
+}
+
+.imgProfile img{
+    border-radius:50% ;
+    width:80px;
+   
+}
+
+
+.imgProfile div{
+    width: fit-content;
+    border: 2px solid green;
+}
+
+
+
 
 
 

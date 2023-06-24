@@ -84,9 +84,42 @@ header{
 .hero{
     display: flex;
     min-height: 100vh;
+    background-image: url(https://codewithsadee.github.io/foodie/assets/images/hero-bg.jpg);
     align-items: center;
-    padding: 5rem 10rem;
-    background-color: hsl(225deg 19.51% 16.08%) ;
+    /* padding: 5rem 10rem;
+    background-color: hsl(225deg 19.51% 16.08%) ; */
+}
+
+.herodata{
+    width: 40vw;
+}
+
+img{
+    height: auto;
+}
+
+.herotext{
+    font-size: 7rem !important;
+    font-weight: 900 !important;
+    color: hsl(23, 61%, 86%);
+    max-width: 12ch !important;
+    letter-spacing: -2.5px;
+    line-height: -2.5px !important;
+}
+
+.heropara{
+    font-size: 1.6rem !important;
+    color: #f1d6c6 !important;
+}
+
+#herophoto{
+    position: absolute;
+    bottom: 40px;
+    right: 0;
+}
+
+.heroburger{
+    position: relative;
 }
 .tagline{
     flex: 1 1 40rem;
@@ -149,14 +182,59 @@ header{
 
 .align{
     width: 1024px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin: 0 auto;
 }
 
-.hero + section{
+.foodsection{
  background-color: hsl(40deg 42.86% 95.88%);
- border:  2px solid orange
+ /* border:  2px solid orange */
 };
+
+
+/* banner css */
+.iconstyle {
+    /* border-radius: 50%; */
+    font-size: 2rem;
+}
+
+.iconspan{
+    font-size:2rem;
+    font-weight: 600;
+    color: #0d1216;
+    padding-left:10px;
+}
+
+.bannerlist{
+    margin-block: 15px 25px
+}
+.bannerlist li {
+    margin: 10px 0;
+}
+
+.foodimge{
+    max-width: max-content;
+    margin-inline: auto;
+}
+
+#discountimg{
+    position: absolute;
+    top: 0;
+    left: 100px;
+    animation:scaleup 1s linear infinite alternate;
+    
+    
+}
+
+
+@keyframes scaleup {
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.05);
+    }
+}
 
    
  /* menu data  */
@@ -175,9 +253,13 @@ header{
     flex-wrap: wrap;
     gap: 25px;
     justify-content: center;
+    padding:20px 0;
     
     /* border: 2px solid green; */
 }
+
+
+
 
 .foodItems div{
     width: 30%;
@@ -245,13 +327,13 @@ header{
 
 
 .aboutfood{
-    margin: 20px 0;
+    padding-top: 20px;
 }
 
 
 
 
-#foods{
+.foods{
     color: hsl(32, 100%, 59%);
 }
 
@@ -298,23 +380,91 @@ del{
 }
 
 
+/* section oredr ads */
+
+.cycle{
+    padding:60px
+}
+.orderAd{
+    display: flex;
+    gap: 60px;
+
+}
+
+
+.textdata{
+    width: 40vw;
+    /* border: 2px solid red; */
+    /* display: flex;
+    flex-direction: column; */
+    /* gap: 1rem; */
+    /* align-items: center; */
+    /* justify-content: center; */
+}
+
+.textdata h2{
+    font-size: 3.2rem;
+    line-height: 1.6;
+    letter-spacing: -2px;
+    font-weight: 600;
+    max-width: 17ch;
+}
+.textdata p{
+    color: #787878;
+    line-height: 1.6;
+    font-size: 1.6rem;
+    margin-block: 15px 25px;
+}
+
+.textdata button{
+    background-color: orange;
+    color: white;
+    font-family: var(--varfor-fontFamily) ;
+    font-size: 1.4rem;
+    font-weight:600;
+    height:45px;
+    width:15rem;
+    /* margin-top: 5rem; */
+    outline: none;
+    border: none;
+}
+.cycleimg{
+    position: relative;
+    aspect-ratio:1/0.86;
+}
+.cycleimg img:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-80px);
+    transition: 0.5s ease;
+}
+
+
+
+/* section reviews */
+
+
 .reviews{
     display: flex;
     gap: 10px;
     width: 100%;
+    padding:2rem 0;
 
 }
 
 .sizereview{
     width: 33%;
     padding: 40px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+    box-shadow:  0 1px 2px hsla(0, 0%, 0%, 0.2);
+    background-color: white;
    
 }
 
 .imgProfile{
     display: flex;
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     width: 100%;
 }
 
@@ -327,10 +477,50 @@ del{
 
 .imgProfile div{
     width: fit-content;
-    border: 2px solid green;
+    /* border: 2px solid green; */
 }
 
+.profiletext{
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    /* align-content: center; */
+    justify-content: center;
+    margin-left: 10px;
+}
 
+.breakpara{
+    margin-top: 2rem;
+}
+
+.breakpara p {
+    font-size: 1.6rem;
+    text-align: left;
+    line-break: auto;
+    color:#787878 ;
+    line-height: 1.6;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+.commentpara{
+    color: #787878 !important ;
+    
+}
+
+.reviewsection{
+    background-color: #f9f6f0;
+}
+
+.testimonial{
+    padding-top: 1rem;
+}
+
+.arrngestar{
+    margin-left: 0;
+    padding-top: .8rem;
+}
 
 
 

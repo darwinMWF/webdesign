@@ -523,6 +523,189 @@ del{
 }
 
 
+/* footer  */
+
+.footerdata{
+    display: flex;
+}
+
+
+.aboutweb{
+    width: 25%;
+    /* border: 2px solid green; */
+}
+
+
+.footer{
+    background-image: url(https://codewithsadee.github.io/foodie/assets/images/footer-illustration.png);
+    position: relative;
+    padding-block: 120px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    border-block-end: 2px solid hsla(245, 17%, 29%, 0.3);
+    /* border: 2px solid ; */
+}
+
+.socialhandle li {
+    display: inline-block;
+    margin-inline:1px;
+}
+
+.socialhandle li a {
+    display:inline-block;
+    background-color: orange;
+    color: white;
+    font-family: var(--varfor-fontFamily) ;
+    /* font-size: 2rem; */
+    font-weight:600;
+    height:1.6rem;
+    width:1.6rem;
+    /* margin-top: 5rem; */
+    outline: none;
+    border: none;
+
+}
+
+.socialhandle li a i {
+    font-size: 1.4rem;
+    padding: 2px;
+    
+}
+
+#aboutparafooter {
+    font-size: 1rem;
+}
+
+.footer-list > li:not(:last-child) {
+    margin-block-end: 15px;
+}
+
+.footer-list-title {
+    position: relative;
+    max-width: max-content;
+    color: #0d1216;
+    font-family: var(--varfor-fontFamily);
+    font-size:1.8rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-block-end: 20px;
+}
+
+.footer-form{
+    display: flex;
+    width:80%;
+    flex-direction: column;
+    /* border: 2px solid red; */
+
+}
+
+.input-wrapper{
+    /* width: 100%; */
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-block-end: 10px;
+}
+
+.input-wrapper input{
+    width: calc(50% - 5px);
+    color: gray;
+    font-size: 1.4rem;
+    border: 1px solid hsl(0, 0%, 93%);
+    padding: 8px 12px;
+}
+
+.footer-form{
+    background-color: #ffff;
+    padding: 30px;
+    border: 1px solid #ededed;
+    box-shadow: 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+
+.footer-form button {
+    background-color: orange;
+    color: white;
+    font-family: var(--varfor-fontFamily) ;
+    font-size: 1.4rem;
+    font-weight:600;
+    height:25px;
+    width:10rem;
+    margin-top: 2rem;
+    outline: none;
+    border: none;
+}
+
+.lastform{
+    width: 35%;
+    /* height: 20vh; */
+}
+
+
+.input-field{
+    width: calc(50% - 5px);
+    color: gray;
+    font-size: 1.4rem;
+    border: 1px solid hsl(0, 0%, 93%);
+    padding: 8px 12px;
+}
+
+
+.copyright-text{
+    text-align: center;
+    margin-block:10px ;
+}
+
+.footer::after{
+    content: url(https://codewithsadee.github.io/foodie/assets/images/delivery-boy.svg);
+    position: absolute;
+    bottom: -11px;
+    left: -160px;
+    width: 160px;
+    animation: running-cycle 10s linear infinite;
+    /* animation-fill-mode: forwards; */
+}
+
+@keyframes running-cycle {
+    0%{
+        left: 0%;
+    }
+    10%{
+        left: 10%;
+    }
+    20%{
+        left: 20%;
+    }
+    30%{
+        left: 30%;
+    }
+    40%{
+        left: 40%;
+    }
+    50%{
+        left: 50%;
+    }
+    60%{
+        left: 60%;
+    }
+    70%{
+        left: 70%;
+    }
+    80%{
+        left: 80%;
+    }
+    90%{
+        left: 90%;
+    }
+
+    100%{
+     left: 100%;
+    }
+}
+
+
+
 
 
 

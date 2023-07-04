@@ -10,6 +10,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     />
     <link rel="stylesheet" href="index.css" />
+
+    <link rel="stylesheet" href="media.css">
   </head>
   <body>
     <!-- navigation section  -->
@@ -83,7 +85,7 @@
             </li>
           </ul>
           
-          <button>order now</button>
+          <button id="adorderBtn">order now</button>
         
         </div>
         </div>
@@ -98,11 +100,11 @@
           <div class="aboutfood">
             <p class="fhead">Popular Dishes</p>
             <h2>Our Delicious <span class="foods">Foods</span></h2>
-            <p>
+            <p id="foodguide">
               Food is any substance consumed to provide nutritional support for
               an organism.
             </p>
-            <div>
+            <div id="btns">
               <button>All</button>
               <button>Pizza</button>
               <button>Burger</button>
@@ -125,6 +127,7 @@
               </section>
               <h3 class="adtitle">Fried Chicken Unlimited</h3>
               <p>price:&nbsp<span>$49.00</span> &nbsp<del>$69.00</del></p>
+  
             </div>
             <div>
               <img
@@ -204,15 +207,15 @@
     <section class="cycle">
       <div class="align">
         <div class="orderAd">
-        <div class="textdata">
+        <div class="textdata " id="mediatextdata">
           <h2>A Moments Of Delivered On <span class="foods">Right Time</span> & Place</h2>
           <p>The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.</p>
           <button>order now</button>
         </div>
-        <div class="cycleimg">
-          <img width="100%" src="https://codewithsadee.github.io/foodie/assets/images/delivery-banner-bg.png
-          " alt="badal">
-          <img width="100%"  src="https://codewithsadee.github.io/foodie/assets/images/delivery-boy.svg" alt="cycle">
+        <div class="cycleimg"> 
+          <img src="https://codewithsadee.github.io/foodie/assets/images/delivery-banner-bg.png
+          " alt="badal"  width="700" height="620">
+          <img  src="https://codewithsadee.github.io/foodie/assets/images/delivery-boy.svg" alt="cycle" width="1000" height="880">
         </div>
         </div>
       </div>
@@ -223,7 +226,7 @@
         <div class="testimonial">
           <p class="fhead">testimonial</p>
           <h2>Our Customers <span class="foods">reviews</span></h2>
-          <p class="commentpara">Food is any substance consumed to provide nutritional support for an organism.</p>
+          <p class="commentpara" >Food is any substance consumed to provide nutritional support for an organism.</p>
         </div>
         <div class="reviews">
           <div class="sizereview">
@@ -288,8 +291,8 @@
     <section class="footer">
       <div class="align">
         <div class="footerdata">
-        <div class="aboutweb textdata">
-          <div class="logo">
+        <div class="aboutweb">
+          <div class="logo footerlogo">
             <a href=""><i class="fas fa-utensils"></i>food</a>
           </div>
           <p id="aboutparafooter">Financial experts support or help you to to find out which way you can raise your funds more.</p>

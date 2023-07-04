@@ -20,9 +20,14 @@ html{
 }
 
 body{
+    /* overflow: hidden; */
     /*  */
     /* background-color: hsl(225deg 19.51% 16.08%) ; */
 
+}
+
+section{
+    overflow: hidden;
 }
 
 /* header section  */
@@ -182,7 +187,7 @@ img{
 
 .align{
     width: 1024px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
     margin: 0 auto;
 }
 
@@ -256,6 +261,12 @@ img{
     padding:20px 0;
     
     /* border: 2px solid green; */
+}
+
+#foodguide{
+    max-width: 44ch;
+    margin-inline: auto;
+    margin-block-end: 30pxs
 }
 
 
@@ -389,6 +400,10 @@ del{
     display: flex;
     gap: 60px;
 
+}
+
+.cycleimg img{
+    width: 100%; 
 }
 
 
@@ -559,8 +574,6 @@ del{
     font-family: var(--varfor-fontFamily) ;
     /* font-size: 2rem; */
     font-weight:600;
-    height:1.6rem;
-    width:1.6rem;
     /* margin-top: 5rem; */
     outline: none;
     border: none;
@@ -568,13 +581,15 @@ del{
 }
 
 .socialhandle li a i {
-    font-size: 1.4rem;
+    font-size: 2.3rem;
     padding: 2px;
     
 }
 
 #aboutparafooter {
-    font-size: 1rem;
+    margin-block: 15px 25px;
+    font-size: 1.5rem;
+
 }
 
 .footer-list > li:not(:last-child) {

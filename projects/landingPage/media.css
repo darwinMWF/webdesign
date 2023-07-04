@@ -1,0 +1,166 @@
+@media screen and (max-width: 1024px) {
+  .textdata {
+    width: 55%;
+  }
+
+  .cycleimg {
+    width: 43%;
+  }
+
+  .textdata h2 {
+    font-size: 3rem;
+  }
+
+  .textdata p {
+    font-size: 1.2rem;
+    max-width: 100%;
+  }
+
+  .textdata ul li span,
+  i {
+    font-size: 1.6rem;
+  }
+
+  .orderAd {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .align {
+    width: 100%;
+  }
+
+  .foodItems div {
+    width: 40%;
+    height: auto;
+  }
+
+  .reviews {
+    padding-inline: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sizereview {
+    width: 70%;
+  }
+
+  .commentpara {
+    max-width: 44ch;
+    margin-inline: auto;
+  }
+
+  .footerdata{
+    margin-inline: 50px;
+    flex-wrap: wrap;
+    gap: 5%;
+    border: 2px solid red;
+   
+  }
+
+  .aboutweb{
+    width: 45%;
+    padding: 20px;
+  }
+  .footerlogo a,i{
+    font-size: 3rem;
+  }
+
+  .footer-list-item{
+    font-size: 1.5rem;
+  }
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .textdata {
+    width: 80%;
+  }
+
+  .cycleimg {
+    width: 60%;
+  }
+  .orderAd {
+    flex-direction: column;
+  }
+
+  .cycleimg,
+  .textdata {
+    margin: 0 auto;
+  }
+
+  .textdata h2 {
+    text-align: center;
+  }
+
+  .textdata p {
+    font-size: 1.8rem;
+    max-width: 100%;
+    text-align: center;
+  }
+  .textdata ul li {
+    text-align: center;
+  }
+
+  .textdata button {
+    margin-left: 40%;
+  }
+
+  .foodItems div {
+    width: 80%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .foodItems div img {
+    width: 50%;
+    margin-inline: auto;
+  }
+
+  .foodItems div > * {
+    text-align: center;
+  }
+
+  .foodName,
+  .rating {
+    display: block;
+    margin-left: 0;
+  }
+
+  .foodItems {
+    margin-inline: auto;
+  }
+
+  .aboutfood {
+    margin-inline: 50px;
+  }
+
+  .foodguide {
+    text-align: center;
+  }
+
+  #btns button {
+    padding: 5px 20px;
+  }
+
+  #mediatextdata > * {
+    text-align: left;
+  }
+
+  #mediatextdata button {
+    margin-left: 0;
+    padding-left: 8%;
+  }
+
+  #mediatextdata {
+    width: 100%;
+  }
+
+  .footerdata{
+    width: 50%;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 640px) {
+}

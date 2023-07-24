@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loops and functions</title>
+  </head>
+  <body>
+    <script>
+      //     const obj = {
+      //     name:"mukesh",
+      //     age:25
+      // }
+
+      // console.log(Object.keys(obj).length)
+      // console.log(obj.name)
+      // console.log(obj.age)
+
+      // for (let index = 0; index < arry.length; index++) {
+      //    console.log(arry[index])
+
+      // }
+
+      // for (const index of arry) {
+      //     // if(typeof index === 'string'){
+      //     //     console.log(index)
+      //     // }
+
+      //     if(typeof index === 'object'){
+      //         for(let key in index){
+      //             console.log(index[key])
+      //         }
+      //     }else{
+      //         console.log(index)
+      //     }
+
+      // }
+
+      // for(let i in obj){
+      //     console.log(obj[i])
+      // }
+
+      // function
+      //   console.log(prompt("enter any value"));
+
+
+    //   function by defination
+      function Leapyear() {
+        const year = prompt("enter any year");
+
+        if (year % 4 === 0) {
+          if (year % 100 === 0) {
+            if (year % 400 === 0) {
+              console.log("leap year");
+            } else {
+              console.log("it is common year");
+            }
+          } else {
+            console.log("leap year");
+          }
+        } else {
+          console.log("it is common year");
+        }
+      }
+
+      function simpleInterest(Amount, rate, time) {
+        const SI = (Amount * rate * time) / 100;
+
+        return SI;
+        console.log("hello");
+      }
+
+      function Yourname(name) {
+        return `${name} you are hero`;
+      }
+
+      function printArry(arry) {
+        for (const i of arry) {
+          console.log(i);
+        }
+      }
+      //   code - 1000
+
+      //   Leapyear(); //calling fnction
+
+      //   code -2000
+      //   Leapyear(); //calling function
+
+      //   for (let i = 1; i <  5; i++) {
+      //     if(i%2 === 0){
+      //        continue
+      //     }
+      //     console.log(i)
+
+      //   }
+
+    //   const answer = simpleInterest(5000, 5, 2);
+    //   console.log(answer);
+    //   console.log(simpleInterest(60056, 2.5, 8));
+    //   console.log(Yourname("MUKESH"));
+      const arry = [289, "sukesh", 56, 89, true];
+      const brry = [28, 89, 45, 120];
+    //   printArry(arry);
+    //   printArry(brry);
+
+
+        // way of making function in this way called = function by expression
+      const areaOfTriangle = function (base,height){
+        return 1/2*base*height;
+      }
+
+      const arrowfunction = ()=>{
+        // arrow function Es-6
+        alert("hello darwin techs")
+      }
+      // anonymus function
+
+      arrowfunction()
+    //   console.log(areaOfTriangle(25,50))
+
+
+    </script>
+  </body>
+  s
+</html>

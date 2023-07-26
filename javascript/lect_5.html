@@ -1,0 +1,60 @@
+ <!-- dom manipulation -->
+<!-- dom - document object model  - tree --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom manipulation</title>
+</head>
+<body>
+    <h1 id="heading">hello</h1>
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit consectetur eum ex quam porro deleniti illo perspiciatis, reprehenderit temporibus autem a, iste ut maxime excepturi blanditiis quasi ipsum alias!</p>
+    <p class="p1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit consectetur eum ex quam porro deleniti illo perspiciatis, reprehenderit temporibus autem a, iste ut maxime excepturi blanditiis quasi ipsum alias!</p>
+    <li name="list">list</li>
+    <li name="list">list</li>
+    <div >1</div>
+    <div><h1 id="afterdiv" class="text">heading class</h1></div>
+    <script>
+        const body = document.getElementsByTagName("body")
+        const h1Element  = document.getElementById("heading")
+        const pElemnt = document.getElementsByClassName("p1")[1]
+        const tagElement = document.getElementsByTagName("div")[1]
+        const Elementname= document.getElementsByName('list')[1]
+        const heding = document.getElementById("afterdiv")
+        const lastelement = document.querySelector(".p1")
+
+
+        // heding.classList.add("text")
+        heding.classList.remove('text')
+        // createElemnt 
+        
+        const newElement = document.createElement("h2");
+       newElement.classList.add('heading')
+       
+        newElement.innerHTML = `<span class="h1span">new elemen h1</span>`
+        // newElement.innerText = "<span>new elemen h1</span>"
+        tagElement.appendChild(newElement)
+
+        newElement.style.color="red"
+        newElement.style.border="2px solid black"
+
+        // tagElement.removeChild(heding)
+        const para = document.createElement("p");
+        para.innerText = "hello this is replceChild"
+
+        tagElement.replaceChild(para,heding)
+        tagElement.setAttribute("id","divison")
+
+        console.log(body.lastchild)
+
+
+        // console.log(newElement)
+
+        // const lastelement = document.querySelectorAll(".p1") for select all same class
+        
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+  </head>
+  <body>
+    <h1>Events in Javascript</h1>
+    <button id="btnclick">click me!</button>
+    <button id="btnremove">remove</button>
+    <input
+      type="text"
+      id="input"
+      value="hello"
+      oninput="handleInputChange(this)"
+      onblur="OnblurInput()"
+    />
+    <div class="divafter"></div>
+    <button onclick="handleClick()">onclickbtn</button>
+
+    <!-- <script src="index.js"></script> -->
+    <script>
+      const heading = document.querySelector("h1");
+      const button = document.getElementById("btnclick");
+      const remove = document.getElementById("btnremove");
+      const input = document.getElementById("input");
+      const div = document.querySelector(".divafter");
+      const division = document.createElement("h5");
+      function handleClick() {
+        heading.style.color = "red";
+      }
+
+      function handleRemove() {
+        heading.style.color = "black";
+      }
+
+      function handleInputChange(event) {
+        division.innerHTML = `${event.value}`;
+      }
+
+      function OnblurInput(){
+            input.value = ""
+      }
+
+      div.appendChild(division)
+      
+      button.addEventListener("click", handleClick); //callback
+      remove.addEventListener("click", handleRemove);
+      // input.addEventListener("change",handleInputChange)
+      // input.addEventListener("focus",()=>{
+      //     input.style.backgroundColor = "yellow"
+      // })
+    </script>
+  </body>
+</html>

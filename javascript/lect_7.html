@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do List</title>
+    <style>
+      li {
+        list-style: none;
+      }
+
+      del {
+        text-decoration: none;
+      }
+
+      .completedTask {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="addtask">
+        <input type="text" id="inputtask" oninput="takeinputtask(this)" />
+        <button id="btn" onclick="addtask()">add</button>
+      </div>
+      <ul class="tasks"></ul>
+    </div>
+    <script>
+      const input = document.getElementById("inputtask");
+      const addbtn = document.getElementById("btn");
+      const taskDivison = document.querySelector(".tasks");
+
+      let task;
+      let id = 0;
+      function takeinputtask(event) {
+        task = event.value;
+      }
+
+      function addtask() {
+        const list = document.createElement("li");
+        list.innerHTML = `<input type="checkbox" id="${id}" oninput="inputchecked(this)"><del id="del-${id}">${task}</del><button id=edit-${id} onclick="edittask(this)">edit</button>`;
+        list.setAttribute("id", `li-${id}`);
+        taskDivison.appendChild(list);
+        input.value = "";
+        id++;
+      }
+
+      function inputchecked(event) {
+        const checkedItem = document.getElementById(`del-${event.id}`);
+        if (event.checked) {
+          checkedItem.classList.add("completedTask");
+        } else {
+          checkedItem.classList.remove("completedTask");
+        }
+      }
+
+      function edittask(event) {
+        const listid = event.id.split("-");
+        const editlist = document.getElementById(`li-${listid[1]}`);
+        editlist.innerHTML = `<input type="text" value="${editlist.childNodes[1].innerHTML}" oninput="takeinputtask(this)"><button onclick=editedlist(this)>add</button>`;
+      }
+
+      function editedlist(event) {
+        event.parentNode.innerHTML = `<input type="checkbox" id="${event.parentNode.id}" oninput="inputchecked(this)"><del id="del-${event.parentNode.id}">${task}</del><button id=edit-${event.parentNode.id} onclick="edittask(this)">edit</button>`;
+      }
+    </script>
+  </body>
+</html>

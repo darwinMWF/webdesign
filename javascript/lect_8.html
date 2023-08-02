@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+    <script>
+        const heading = document.createElement("h1");
+        const para = document.createElement("p");
+        const body = document.getElementsByTagName("body")[0]
+        heading.innerText = "<p>my name is mukesh</p>"
+       para.innerHTML = "<p>my name is mukesh</p>"
+        body.append(heading)
+        body.append(para)
+    </script>
+</body>
+</html>

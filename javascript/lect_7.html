@@ -16,6 +16,13 @@
       .completedTask {
         text-decoration: line-through;
       }
+
+      .btncss {
+        border: none;
+        color: white;
+        border-radius: 5px;
+        background-color: rgb(70, 175, 194);
+      }
     </style>
   </head>
   <body>
@@ -24,22 +31,42 @@
         <input type="text" id="inputtask" oninput="takeinputtask(this)" />
         <button id="btn" onclick="addtask()">add</button>
       </div>
+      <button id="alltaskBtn">all</button>
+      <button id="completedTaskBtn" onclick="generateCompletedTask()">
+        completed
+      </button>
+      <button id="notcompletdTask">not completed</button>
       <ul class="tasks"></ul>
+      <ul class="completedTaskLists"></ul>
+      <ul class="notCompletedTaskLists"></ul>
     </div>
     <script>
       const input = document.getElementById("inputtask");
       const addbtn = document.getElementById("btn");
       const taskDivison = document.querySelector(".tasks");
-
+      const alltask = document.getElementById("alltaskBtn");
+      const completedTask = document.getElementById("completedTaskBtn");
+      const notcompletdTask = document.getElementById("notcompletdTask");
+      const completedTaskDivision = document.querySelector(
+        ".completedTaskLists"
+      );
+      const notCompletedTaskDivision = document.querySelector(
+        ".notCompletedTaskLists"
+      );
       let task;
       let id = 0;
+
       function takeinputtask(event) {
         task = event.value;
       }
 
       function addtask() {
+        taskDivison.style.display = "block";
+        completedTask.classList.remove("btncss");
+        completedTaskDivision.style.display = "none";
+        alltask.classList.add("btncss");
         const list = document.createElement("li");
-        list.innerHTML = `<input type="checkbox" id="${id}" oninput="inputchecked(this)"><del id="del-${id}">${task}</del><button id=edit-${id} onclick="edittask(this)">edit</button>`;
+        list.innerHTML = `<input type="checkbox" id="${id}" oninput="inputchecked(this)"><del id="del-${id}">${task}</del><button id=edit-${id} onclick="edittask(this)">edit</button><button id="rem-${id}" onclick="removelistItem(this)">remove</button>`;
         list.setAttribute("id", `li-${id}`);
         taskDivison.appendChild(list);
         input.value = "";
@@ -62,7 +89,26 @@
       }
 
       function editedlist(event) {
-        event.parentNode.innerHTML = `<input type="checkbox" id="${event.parentNode.id}" oninput="inputchecked(this)"><del id="del-${event.parentNode.id}">${task}</del><button id=edit-${event.parentNode.id} onclick="edittask(this)">edit</button>`;
+        event.parentNode.innerHTML = `<input type="checkbox" id="${event.parentNode.id}" oninput="inputchecked(this)"><del id="del-${event.parentNode.id}">${task}</del><button id=edit-${event.parentNode.id} onclick="edittask(this)">edit</button><button id="rem-${id}" onclick="removelistItem(this)">remove</button>`;
+      }
+
+      function removelistItem(event) {
+        taskDivison.removeChild(event.parentNode);
+      }
+
+      function generateCompletedTask() {
+        taskDivison.style.display = "none";
+        completedTask.classList.add("btncss");
+        alltask.classList.remove("btncss");
+        completedTaskDivision.style.display = "block";
+        completedTaskDivision.innerHTML = "";
+        taskDivison.childNodes.forEach(function (list, index) {
+          const newlist = document.createElement("li");
+          if (list.firstChild.checked) {
+            newlist.innerHTML += `<input type="checkbox" id="complet-${input}" oninput="inputchecked(this)" checked><del id="complet-del-${index}" style="text-decoration:line-through">${list.childNodes[1].innerHTML}</del><button id=complet-edit-${index} onclick="edittask(this)">edit</button><button id="complet-rem-${index}" onclick="removelistItem(this)">remove</button>`;
+            completedTaskDivision.append(newlist);
+          }
+        });
       }
     </script>
   </body>

@@ -31,11 +31,13 @@
         <input type="text" id="inputtask" oninput="takeinputtask(this)" />
         <button id="btn" onclick="addtask()">add</button>
       </div>
-      <button id="alltaskBtn">all</button>
+      <button id="alltaskBtn" onclick="generateAllTask()">all</button>
       <button id="completedTaskBtn" onclick="generateCompletedTask()">
         completed
       </button>
-      <button id="notcompletdTask">not completed</button>
+      <button id="notcompletdTask" onclick="generateNotCompletedTask()">
+        not completed
+      </button>
       <ul class="tasks"></ul>
       <ul class="completedTaskLists"></ul>
       <ul class="notCompletedTaskLists"></ul>
@@ -63,7 +65,9 @@
       function addtask() {
         taskDivison.style.display = "block";
         completedTask.classList.remove("btncss");
+        notcompletdTask.classList.remove("btncss");
         completedTaskDivision.style.display = "none";
+        notCompletedTaskDivision.style.display = "none";
         alltask.classList.add("btncss");
         const list = document.createElement("li");
         list.innerHTML = `<input type="checkbox" id="${id}" oninput="inputchecked(this)"><del id="del-${id}">${task}</del><button id=edit-${id} onclick="edittask(this)">edit</button><button id="rem-${id}" onclick="removelistItem(this)">remove</button>`;
@@ -98,8 +102,10 @@
 
       function generateCompletedTask() {
         taskDivison.style.display = "none";
+        notCompletedTaskDivision.style.display = "none";
         completedTask.classList.add("btncss");
         alltask.classList.remove("btncss");
+        notcompletdTask.classList.remove("btncss");
         completedTaskDivision.style.display = "block";
         completedTaskDivision.innerHTML = "";
         taskDivison.childNodes.forEach(function (list, index) {
@@ -109,6 +115,32 @@
             completedTaskDivision.append(newlist);
           }
         });
+      }
+
+      function generateNotCompletedTask() {
+        taskDivison.style.display = "none";
+        completedTaskDivision.style.display = "none";
+        notcompletdTask.classList.add("btncss");
+        alltask.classList.remove("btncss");
+        completedTask.classList.remove("btncss");
+        notCompletedTaskDivision.style.display = "block";
+        notCompletedTaskDivision.innerHTML = "";
+        taskDivison.childNodes.forEach(function (list, index) {
+          const newlist = document.createElement("li");
+          if (!list.firstChild.checked) {
+            newlist.innerHTML += `<input type="checkbox" id="not-complet-${input}" oninput="inputchecked(this)" ><del id="not-complet-del-${index}" style="text-decoration:none">${list.childNodes[1].innerHTML}</del><button id=not-complet-edit-${index} onclick="edittask(this)">edit</button><button id="not-complet-rem-${index}" onclick="removelistItem(this)">remove</button>`;
+            notCompletedTaskDivision.append(newlist);
+          }
+        });
+      }
+
+      function generateAllTask() {
+        taskDivison.style.display = "block";
+        alltask.classList.add("btncss");
+        notcompletdTask.classList.remove("btncss");
+        completedTask.classList.remove("btncss")
+        completedTaskDivision.style.display = "none";
+        notCompletedTaskDivision.style.display = "none";
       }
     </script>
   </body>

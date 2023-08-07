@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>higher order function</title>
+  </head>
+  <body>
+    <script>
+      const arry = ["jk",212,789,"kgfjk"]; // arry - template literal
+      const name = "mukesh"; // string
+      console.log(name.toUpperCase())
+
+      const brry = new Array(3);
+      brry[0] = 45
+      brry[1] = 50;
+      brry[2] = 78
+
+      console.log(arry.reverse())
+
+      // const obj = {
+      //     age :25,
+      //     gender:"male"
+      // }
+
+      // const obj1 = {
+      //     age :26,
+      //     gender:"female",
+      //     reproduction:function (){
+
+      //         if(this.gender === "female"){
+      //             return true
+      //         }
+      //         return false;
+      //     }
+      // }
+
+      // console.log(obj1.reproduction())
+
+      
+    
+
+
+      class physicalInformation {
+        
+
+        constructor(age, gender) {
+          this.age = age;
+          this.gender = gender;
+        }
+
+        genderdefine() {
+          if (this.gender === "female") {
+            return true;
+          }
+          return false;
+        }
+
+        // user(){
+        //     return "mukesh"
+        // }
+
+        // get userName(){
+        //     return this.user()
+        // }
+
+        //getter
+        get reproduction() {
+          return this.genderdefine()
+        }
+        //setter
+        // set reproduction(name) {
+        //   this.name = name;
+        // }
+      }
+
+      class moreInfoForPatietns extends physicalInformation{
+
+        constructor(name,age,gender){
+            super(age,gender)
+            this.name = name
+            // this.age = age
+            // this.gender = gender
+        }
+
+}
+
+      const obj = new physicalInformation(12, "male");
+      const obj1 = new physicalInformation(45, "female");
+      const patients = new moreInfoForPatietns("rajesh",29,"male");
+        console.log(patients)
+
+        // obj.reproduction = "mukesh"
+        // console.log(obj.reproduction)
+        // console.log(obj.user())
+    </script>
+  </body>
+</html>

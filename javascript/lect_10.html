@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>methods in javascript</title>
+  </head>
+  <body>
+    <script>
+      const arry = [45, -12, 23, -78];
+
+      //  const a =   arry.push(100);
+      //  console.log(a)
+
+      // push and pop method
+      // arry.push(101);
+      // arry.push(102);
+      // const a = arry.pop()
+      // console.log(a)
+      // arry.pop();
+      // arry.pop();
+      // arry.pop();
+      // console.log(arry)
+
+      //splice method
+      //    const b = arry.splice(1,0,13)
+      // console.log(arry)
+
+      //slice
+      const c = arry.slice(2);
+      console.log(arry);
+      // console.log(c)
+
+      // MAP return new arry
+      const newArry = arry.map((x) => {
+        if (x % 2 === 0) {
+          return x + 2;
+        }
+        return x;
+      });
+
+      const crry = arry.map((x) => x * 2);
+      console.log("crry: ", crry);
+      console.log("newarry: ", newArry);
+
+      // filter return new arry
+      const drry = arry.filter((x) => {
+        if (x % 2 === 0) {
+          return x;
+        }
+      });
+
+      const frry = arry.filter((x) => x % 2 !== 0);
+      console.log("frry: ", frry);
+      console.log("drry: ", drry);
+
+      //sort return a=sort arry but chage actual arry  and toSorted return new arry not chnage actual array
+      // const d = arry.sort()
+      // console.log("d ",d)
+      const g = arry.toSorted((a, b) => a - b);
+      console.log("g ", g);
+      console.log(arry);
+
+      // tostring
+      const h = arry.toString();
+      console.log(h);
+
+      arry.forEach((x) => {
+        console.log(x);
+      });
+
+      // string
+      const str = "MOZILLA";
+
+      console.log(str.substr(1, 2));
+      // Expected output: "oz"
+
+      console.log(str.substr(2));
+      // output = zilla
+      const newstr = str.toLowerCase()
+    //   console.log("lowercase string:-",)
+    console.log(newstr.toUpperCase())
+
+
+    //split
+    const bigstr = " my name is mukesh ";
+
+    const answerstr = bigstr.split(" ");
+
+    console.log(answerstr)
+
+    //replace
+
+    console.log("replace string:- ",bigstr.replace("mukesh","rajesh"))
+
+    // charAt
+    console.log("charAt:- ",bigstr.charAt(6))
+    console.log("findindex:- ",bigstr.indexOf("name"))
+    console.log("trim:- ",bigstr.trim())
+
+    // repeat 
+    console.log("repeat:- ","size ".repeat(4))
+
+    </script>
+  </body>
+</html>

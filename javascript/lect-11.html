@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class and arry methods</title>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 2px solid;
+        border-collapse: collapse;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      table {
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Library management</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>BOOK ID</th>
+          <th>BOOK TITLE</th>
+          <th>AUTHER</th>
+          <th>AVAILABLE</th>
+          <th>PRICE</th>
+        </tr>
+      </thead>
+      <tbody id="tdata"></tbody>
+    </table>
+
+    <button>Add</button>
+    <button>delete</button>
+    <button>edit</button>
+
+    <script>
+      const tableData = document.getElementById("tdata");
+        let id = 11
+      let bookdata = [
+        {
+          id: 1,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "11$",
+          totalCopy: 15,
+        },
+        {
+          id: 2,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "20$",
+          totalCopy: 16,
+        },
+        {
+          id: 3,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "23$",
+          totalCopy: 10,
+        },
+        {
+          id: 4,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "30$",
+          totalCopy: 15,
+        },
+        {
+          id: 5,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "150$",
+          totalCopy: 10,
+        },
+        {
+          id: 6,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "100$",
+          totalCopy: 14,
+        },
+        {
+          id: 7,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: false,
+          price: "200$",
+          totalCopy: 0,
+        },
+        {
+          id: 8,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: false,
+          price: "20$",
+          totalCopy: 0,
+        },
+        {
+          id: 9,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: true,
+          price: "200$",
+          totalCopy: 8,
+        },
+        {
+          id: 10,
+          title: "harry potter",
+          Auther: "j.k rollins",
+          Available: false,
+          price: "200$",
+          totalCopy: 0,
+        },
+      ];
+
+      class Books {
+        id = 11;
+        constructor(title, Auther, Available, price, totalCopy) {
+          this.id = id++;
+          this.title = title;
+          this.Auther = Auther;
+          this.Available = Available;
+          this.price = price;
+          this.totalCopy = totalCopy;
+        }
+
+        addbook() {
+          bookdata.push(this);
+          console.log(bookdata)
+        }
+
+        edit(id, title, Auther, Available, price, totalCopy) {
+          const obj = bookdata.find((x) => x.id === id);
+          this.id = id;
+          this.title = title;
+          this.Auther = Auther;
+          this.Available = Available;
+          this.price = price;
+          this.totalCopy = totalCopy;
+        }
+
+        deleteData(id){
+            const newArry = bookdata.filter((x)=>x.id !== id)
+            bookdata = newArry
+            console.log(bookdata)
+        }
+
+
+
+
+      }
+
+      
+
+      const obj = new Books("jkgj", "hjfdh", true, "50$", 200);
+      const obj1 = new Books("jkgj", "hjfdh", true, "50$", 200);
+
+      obj.addbook();
+      obj1.addbook();
+
+      bookdata.forEach((x) => {
+        tableData.innerHTML += `<tr>
+            <td>${x.id}</td>
+            <td>${x.title}</td>
+            <td>${x.Auther}</td>
+            <td>${x.price}</td>
+            <td>${x.totalCopy}</td>
+         </tr>`;
+      });
+    //   obj.edit(11, "tejs", "tejs", true, "455", 56);
+    //   obj.deleteData(11)
+    </script>
+  </body>
+</html>

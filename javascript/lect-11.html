@@ -19,11 +19,30 @@
       table {
         margin: 20px auto;
       }
+
+      label,
+      input {
+        display: block;
+      }
+
+      .addbookformcls {
+        display: flex;
+        justify-content: center;
+      }
+
+      #addbookformcls form {
+        border: 2px solid;
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
     <h1>Library management</h1>
-    <table>
+    <table id="bookTable">
       <thead>
         <tr>
           <th>BOOK ID</th>
@@ -31,18 +50,79 @@
           <th>AUTHER</th>
           <th>AVAILABLE</th>
           <th>PRICE</th>
+          <th>COPY</th>
         </tr>
       </thead>
       <tbody id="tdata"></tbody>
     </table>
 
-    <button>Add</button>
-    <button>delete</button>
-    <button>edit</button>
+    <div id="addbookform" class="addbookformcls">
+      <form action="" id="editform">
+        <label for="booktitle">Book title</label>
+        <input
+          type="text"
+          name=""
+          id="booktitle"
+          placeholder="half-girlfriend"
+        />
+        <label for="bookAuthor">Author</label>
+        <input type="text" id="bookAuthor" placeholder="chetan bhagat" />
+        <label for="availableBook">Available</label>
+        <input type="text" id="availableBook" placeholder="true" />
+        <label for="pricebook">Price</label>
+        <input type="text" id="pricebook" placeholder="4$" />
+        <label for="copybook">Copy</label>
+        <input type="text" id="copybook" placeholder="15" />
+        <button>submit</button>
+      </form>
+    </div>
+    <div id="editbookform" class="addbookformcls">
+      <form action="">
+        <label for="booktitle">Book title</label>
+        <input
+          type="text"
+          name=""
+          id="booktitle"
+          placeholder="half-girlfriend"
+          value=""
+        />
+        <label for="bookAuthor">Author</label>
+        <input
+          type="text"
+          id="bookAuthor"
+          placeholder="chetan bhagat"
+          value=""
+        />
+        <label for="availableBook">Available</label>
+        <input type="text" id="availableBook" placeholder="true" value="" />
+        <label for="pricebook">Price</label>
+        <input type="text" id="pricebook" placeholder="4$" value="" />
+        <label for="copybook">Copy</label>
+        <input type="text" id="copybook" placeholder="15" value="" />
+        <button>submit</button>
+      </form>
+    </div>
+
+    <div class="btns">
+      <button id="addBtn" onclick="Addbook()">Add</button>
+      <button id="deleteBtn">delete</button>
+      <button id="editBtn" onclick="editBook()">edit</button>
+    </div>
 
     <script>
       const tableData = document.getElementById("tdata");
-        let id = 11
+      const AddBookRecord = document.getElementById("addBtn");
+      const deleteBookRecord = document.getElementById("deleteBtn");
+      const editBookRecord = document.getElementById("editBtn");
+      const Booktable = document.getElementById("bookTable");
+      const formaddbook = document.getElementById("addbookform");
+      const formeditbook = document.getElementById("editbookform");
+      const editform = document.getElementById("editform");
+
+      formaddbook.style.display = "none";
+      formeditbook.style.display = "none";
+      Booktable.style.display = "block";
+      let id = 11;
       let bookdata = [
         {
           id: 1,
@@ -136,10 +216,19 @@
           this.price = price;
           this.totalCopy = totalCopy;
         }
-
         addbook() {
           bookdata.push(this);
-          console.log(bookdata)
+          tableData.innerHTML = ""
+          bookdata.forEach((x) => {
+            tableData.innerHTML += `<tr>
+            <td>${x.id}</td>
+            <td>${x.title}</td>
+            <td>${x.Auther}</td>
+            <td>${x.Available}</td>
+            <td>${x.price}</td>
+            <td>${x.totalCopy}</td>
+         </tr>`;
+          });
         }
 
         edit(id, title, Auther, Available, price, totalCopy) {
@@ -152,36 +241,59 @@
           this.totalCopy = totalCopy;
         }
 
-        deleteData(id){
-            const newArry = bookdata.filter((x)=>x.id !== id)
-            bookdata = newArry
-            console.log(bookdata)
+        deleteData(id) {
+          const newArry = bookdata.filter((x) => x.id !== id);
+          bookdata = newArry;
+          console.log(bookdata);
         }
-
-
-
-
       }
 
-      
+      function Addbook() {
+        Booktable.style.display = "none";
+        formaddbook.style.display = "flex";
+        AddBookRecord.style.display = "none";
+      }
 
-      const obj = new Books("jkgj", "hjfdh", true, "50$", 200);
-      const obj1 = new Books("jkgj", "hjfdh", true, "50$", 200);
+      editform.addEventListener("submit", (e) => {
+        
+        e.preventDefault();
+        const title = e.target[0].value;
+        const author = e.target[1].value;
+        const Available = e.target[2].value;
+        const price = e.target[3].value;
+        const totalCopy = e.target[4].value;
+        const obj = new Books(title, author, Available, price, totalCopy);
 
-      obj.addbook();
-      obj1.addbook();
+        bookdata = obj.addbook();
+        formaddbook.style.display = "none";
+        Booktable.style.display = "block";
+        AddBookRecord.style.display = "block";
+        editform.reset()
+
+      });
+
+      function editBook() {
+        Booktable.style.display = "none";
+        formaddbook.style.display = "none";
+        AddBookRecord.style.display = "block";
+        editBookRecord.style.display = "none";
+        formeditbook.style.display = "flex";
+      }
+
+      console.log(bookdata.length);
 
       bookdata.forEach((x) => {
         tableData.innerHTML += `<tr>
             <td>${x.id}</td>
             <td>${x.title}</td>
             <td>${x.Auther}</td>
+            <td>${x.Available}</td>
             <td>${x.price}</td>
             <td>${x.totalCopy}</td>
          </tr>`;
       });
-    //   obj.edit(11, "tejs", "tejs", true, "455", 56);
-    //   obj.deleteData(11)
+      //   obj.edit(11, "tejs", "tejs", true, "455", 56);
+      //   obj.deleteData(11)
     </script>
   </body>
 </html>

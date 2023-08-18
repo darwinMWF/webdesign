@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class and arry methods</title>
+    <style>
+      table,
+      tr,
+      th,
+      td {
+        border: 2px solid;
+        border-collapse: collapse;
+      }
+
+      h1 {
+        text-align: center;
+      }
+      table {
+        margin: 20px auto;
+      }
+
+      label,
+      input {
+        display: block;
+      }
+
+      .addbookformcls {
+        display: flex;
+        justify-content: center;
+      }
+
+      #addbookformcls form {
+        border: 2px solid;
+      }
+
+      .btns {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Library management</h1>
+    <table id="bookTable">
+      <thead>
+        <tr>
+          <th>BOOK ID</th>
+          <th>BOOK TITLE</th>
+          <th>AUTHER</th>
+          <th>AVAILABLE</th>
+          <th>PRICE</th>
+          <th>COPY</th>
+        </tr>
+      </thead>
+      <tbody id="tdata"></tbody>
+    </table>
+
+    <!-- this form for adding book  -->
+    <div id="addbookform" class="addbookformcls">
+      <form action="" id="addForm">
+        <label for="booktitle">Book title</label>
+        <input
+          type="text"
+          name=""
+          id="booktitle"
+          placeholder="half-girlfriend"
+        />
+        <label for="bookAuthor">Author</label>
+        <input type="text" id="bookAuthor" placeholder="chetan bhagat" />
+        <label for="availableBook">Available</label>
+        <input type="text" id="availableBook" placeholder="true" />
+        <label for="pricebook">Price</label>
+        <input type="text" id="pricebook" placeholder="4$" />
+        <label for="copybook">Copy</label>
+        <input type="text" id="copybook" placeholder="15" />
+        <button>submit</button>
+      </form>
+    </div>
+
+    <!-- this is edit form  -->
+    <div id="editbookform" class="addbookformcls">
+      <form action="" id="editForm">
+        <label for="bookid">id</label>
+        <input type="number" id="bookid">
+        <label for="booktitle">Book title</label>
+        <input
+          type="text"
+          name=""
+          id="booktitle"
+          placeholder="half-girlfriend"
+          value=""
+        />
+        <label for="bookAuthor">Author</label>
+        <input
+          type="text"
+          id="bookAuthor"
+          placeholder="chetan bhagat"
+          value=""
+        />
+        <label for="availableBook">Available</label>
+        <input type="text" id="availableBook" placeholder="true" value="" />
+        <label for="pricebook">Price</label>
+        <input type="text" id="pricebook" placeholder="4$" value="" />
+        <label for="copybook">Copy</label>
+        <input type="text" id="copybook" placeholder="15" value="" />
+        <button>submit</button>
+      </form>
+    </div>
+
+    <!-- this is all buttons  -->
+    <div class="btns">
+      <button id="addBtn" onclick="Addbook()">Add</button>
+      <button id="deleteBtn">delete</button>
+      <button id="editBtn" onclick="editBook()">edit</button>
+    </div>
+
+    <script>
+      const tableData = document.getElementById("tdata");
+      const AddBookRecord = document.getElementById("addBtn");
+      const deleteBookRecord = document.getElementById("deleteBtn");
+      const editBookRecord = document.getElementById("editBtn");
+      const Booktable = document.getElementById("bookTable");
+      const formaddbook = document.getElementById("addbookform");
+      const formeditbook = document.getElementById("editbookform");
+      const AddForm = document.getElementById("addForm");
+      const editForm = document.getElementById("editForm");
+
+      formaddbook.style.display = "none";
+      formeditbook.style.display = "none";
+      Booktable.style.display = "block";
+      let bookdata = [];
+        let id = 0;
+      class Books {
+        
+        constructor(title, Auther, Available, price, totalCopy) {
+          this.id = id++;
+          this.title = title;
+          this.Auther = Auther;
+          this.Available = Available;
+          this.price = price;
+          this.totalCopy = totalCopy;
+        }
+        addbook() {
+          const newarry = [...bookdata, this];
+          console.log("class",newarry)
+          return newarry;
+        }
+
+        // edit(id, title, Auther, Available, price, totalCopy) {
+        //   const obj = bookdata.find((x) => x.id === id);
+        //   this.id = id;
+        //   this.title = title;
+        //   this.Auther = Auther;
+        //   this.Available = Available;
+        //   this.price = price;
+        //   this.totalCopy = totalCopy;
+        //   console.log(obj)
+        // }
+
+        deleteData(id) {
+          const newArry = bookdata.filter((x) => x.id !== id);
+          bookdata = newArry;
+          console.log(bookdata);
+        }
+      }
+
+      function renderBookData(){
+        tableData.innerHTML = ""
+        bookdata.forEach((x) => {
+        tableData.innerHTML += `<tr>
+            <td>${x.id}</td>
+            <td>${x.title}</td>
+            <td>${x.Auther}</td>
+            <td>${x.Available}</td>
+            <td>${x.price}</td>
+            <td>${x.totalCopy}</td>
+         </tr>`;
+      });
+
+      }
+
+      function Addbook() {
+        Booktable.style.display = "none";
+        formaddbook.style.display = "flex";
+        AddBookRecord.style.display = "none";
+        editBookRecord.style.display = "block"
+        formeditbook.style.display = "none";
+      }
+
+      AddForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const title = e.target[0].value;
+        const author = e.target[1].value;
+        const Available = e.target[2].value;
+        const price = e.target[3].value;
+        const totalCopy = e.target[4].value;
+        const obj = new Books(title, author, Available, price, totalCopy);
+
+        bookdata = obj.addbook();
+        renderBookData()
+        AddForm.reset()
+        formaddbook.style.display = "none";
+        Booktable.style.display = "block";
+        AddBookRecord.style.display = "block";
+        
+      });
+
+
+
+      function editBook() {
+        Booktable.style.display = "none";
+        formaddbook.style.display = "none";
+        AddBookRecord.style.display = "block";
+        editBookRecord.style.display = "none";
+        formeditbook.style.display = "flex";
+      }
+
+      editForm.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const id = e.target[0].value
+        const title = e.target[1].value;
+        const author = e.target[2].value;
+        const Available = e.target[3].value;
+        const price = e.target[4].value;
+        const totalCopy = e.target[5].value;
+        
+        bookdata = bookdata.map(x => {
+            if(x.id === id){
+                x.title = title;
+                x.author = author;
+                x.Available = Available;
+                x.price = price;
+                x.totalCopy = totalCopy
+                return x;
+            }
+            return x;
+        })
+
+        console.log(bookdata)
+        renderBookData();
+        editForm.reset();
+        Booktable.style.display = "block";
+        AddBookRecord.style.display = "block";
+        editBookRecord.style.display = "block";
+        formeditbook.style.display = "none";
+
+
+      })
+
+      renderBookData()
+
+      
+      //   obj.edit(11, "tejs", "tejs", true, "455", 56);
+      //   obj.deleteData(11)
+    </script>
+  </body>
+</html>

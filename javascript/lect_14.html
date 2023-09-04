@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form submit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    />
+    <style>
+      .parentDiv {
+        height: 100vh !important;
+      }
+
+      .formcontainer {
+        max-width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center border border-danger parentDiv"
+    >
+      <div class="container d-flex justify-content-center formcontainer w-100">
+        <form class="row g-3 shadow" id="signUpform" action="" method="post">
+          <p class="h1 text-center text-primary">signUp form</p>
+          <div class="col-12">
+            <label for="inputName" class="form-label">Name</label>
+            <input
+              type="name"
+              class="form-control"
+              id="inputName"
+              placeholder="yash bothra"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="inputEmail"
+              placeholder="abc234@gmail.com"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputPassword1" class="form-label">password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword1"
+              placeholder="password"
+            />
+          </div>
+          <div class="col-12">
+            <label for="inputPassword2" class="form-label"
+              >Confirm-password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="confirm-password"
+            />
+          </div>
+          <div class="col-12 mb-4">
+            <button type="submit" class="btn btn-primary w-100">Sign in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const form = document.getElementById("signUpform");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = {
+          name: e.target[0].value,
+          email: e.target[1].value,
+          password: e.target[2].value,
+        };
+        fetch("http://localhost:000/formdata", {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }).then(res=>res.json()).then(result=>console.log(result))
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

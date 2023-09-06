@@ -4,16 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>regex</title>
+    <style>
+      .borderFalseInput {
+        border: 2px solid red;
+      }
+
+      .bordertrueInput {
+        border: 2px solid green;
+      }
+    </style>
   </head>
   <body>
-    <input
-      type="text"
-      oninput="validateEmail(this)"
-      id="input"
-     
-    />
+    <input type="text" onblur="validateEmail(this)" id="input" />
+    <small id="validationError"></small>
     <script>
       const input = document.getElementById("input");
+      const small = document.getElementById("validationError");
       //   const pattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
       // const pattern2 = new RegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$","g")
 
@@ -25,34 +31,17 @@
       //   }
 
       const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
-      let flag = false;
+
       function validateEmail(data) {
         if (emailRegex.test(data.value)) {
-          input.style.border = "2px solid red";
+          input.classList.add("bordertrueInput");
+          small.innerHTML = "";
         } else {
-          input.style.border = "2px solid green";
-          // input.after(small)
-        }
-
-        console.log(flag);
-      }
-
-      function validation() {
-        const small = document.createElement("small");
-        if (!flag) {
-          // small.innerHTML = "email is not valid"
-          // input.after(small)
-          input.style.border = "2px solid red";
-        } else {
-          input.style.border = "2px solid green";
-          // input.after(small)
+          input.classList.add("borderFalseInput");
+          input.classList.remove("bordertrueInput");
+          small.innerHTML = "email is not valid";
         }
       }
-
-      //   const email = "mukesh009@gmail.com";
-      //   const isValidEmail = validateEmail(email);
-
-      //   console.log(isValidEmail); // true
     </script>
   </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>regex</title>
+  </head>
+  <body>
+    <input
+      type="text"
+      oninput="validateEmail(this)"
+      id="input"
+     
+    />
+    <script>
+      const input = document.getElementById("input");
+      //   const pattern = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+      // const pattern2 = new RegExp("^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$","g")
+
+      //   function checkPattern(data) {
+      //     // const output = pattern.test(data.value)
+
+      //     const output = pattern.test(data.value);
+      //     console.log(output);
+      //   }
+
+      const emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
+      let flag = false;
+      function validateEmail(data) {
+        if (emailRegex.test(data.value)) {
+          input.style.border = "2px solid red";
+        } else {
+          input.style.border = "2px solid green";
+          // input.after(small)
+        }
+
+        console.log(flag);
+      }
+
+      function validation() {
+        const small = document.createElement("small");
+        if (!flag) {
+          // small.innerHTML = "email is not valid"
+          // input.after(small)
+          input.style.border = "2px solid red";
+        } else {
+          input.style.border = "2px solid green";
+          // input.after(small)
+        }
+      }
+
+      //   const email = "mukesh009@gmail.com";
+      //   const isValidEmail = validateEmail(email);
+
+      //   console.log(isValidEmail); // true
+    </script>
+  </body>
+</html>
